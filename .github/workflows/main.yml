@@ -10,3 +10,7 @@ jobs:
         with:
           tinytex: true
       - run: quarto render asd.ipynb --execute --to pdf
+      - uses: actions/upload-artifact@v7
+        with:
+          path: asd.pdf
+          archive: false
