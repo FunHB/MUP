@@ -4,7 +4,9 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - run: pip install nbformat nbclient
+      - run: pip install jupyter nbformat nbclient ipykernel
       - uses: actions/checkout@v7
       - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
       - run: quarto render asd.ipynb --execute --to pdf
