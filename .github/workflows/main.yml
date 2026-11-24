@@ -4,6 +4,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
+      - run: pip install nbformat
       - uses: actions/checkout@v7
       - uses: quarto-dev/quarto-actions/setup@v2
       - run: quarto render asd.ipynb --execute --to pdf
